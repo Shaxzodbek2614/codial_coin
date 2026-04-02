@@ -12,17 +12,16 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
   List<Widget> pages = [
     Dashboard(),
     ReytingPage(),
     KitoblarPage(),
-    AuksionPage()
+    AuksionPage(),
   ];
 
   int currentIndex = 0;
 
-  void onTap(int index){
+  void onTap(int index) {
     setState(() {
       currentIndex = index;
     });
@@ -35,13 +34,23 @@ class _MainPageState extends State<MainPage> {
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
-          onTap: onTap,
-          items: [
-        BottomNavigationBarItem(icon: Icon(Icons.dashboard),label: "Bosh sahifa"),
-        BottomNavigationBarItem(icon: Icon(Icons.star),label: "Reyting"),
-        BottomNavigationBarItem(icon: Icon(Icons.book_outlined),label: "Kitoblar"),
-        BottomNavigationBarItem(icon: Icon(Icons.pedal_bike_rounded),label: "Auksion"),
-      ]),
+        onTap: onTap,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.dashboard),
+            label: "Bosh sahifa",
+          ),
+          BottomNavigationBarItem(
+            icon:Icon(Icons.bar_chart),
+            label: "Reyting",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu_book),
+            label: "Kitoblar",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.gavel), label: "Auksion"),
+        ],
+      ),
     );
   }
 }
